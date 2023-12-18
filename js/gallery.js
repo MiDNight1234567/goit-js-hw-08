@@ -63,3 +63,30 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+const refs = {
+  gallery: querySelector('.gallery'),
+};
+
+refs.gallery.addEventListener('click', onGalleryClick);
+
+const createGallery = ({ preview, original, description }) =>
+  `<li  class="gallery-item">
+  <a class="gallery-link" href="${original}">
+       <img class="gallery-image"
+       src="${preview}"
+       src="${original}"
+        alt="${description}" />
+        </a>
+  </li>`;
+
+const elem = images.map(createGallery).join('');
+
+refs.gallery.insertAdjacentHTML('beforeend', elem);
+
+function onGalleryClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+  console.log(event.target.dataset);
+}

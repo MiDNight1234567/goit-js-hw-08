@@ -1,0 +1,33 @@
+body {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  width: 1440px;
+  height: 696px;
+  padding: 24px 156px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  background: #ffffff;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.gallery-link {
+}
+
+.gallery-image {
+}
