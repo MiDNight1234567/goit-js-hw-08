@@ -1,5 +1,5 @@
 body {
-  box-sizing: border-box;
+  background-color: rgb(2, 223, 247);
 }
 
 ul {
@@ -26,8 +26,19 @@ img {
   flex-basis: calc((100% - 48px) / 3);
 }
 
-.gallery-link {
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  flex-shrink: 0;
+  transition: transform 250ms ease-in-out;
 }
 
-.gallery-image {
+.gallery-image:hover {
+  transform: scale(1.1);
+}
+
+.modal-img {
+  width: 1112px;
+  height: 640px;
+  flex-shrink: 0;
 }
