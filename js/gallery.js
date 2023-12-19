@@ -81,7 +81,7 @@ function onGalleryClick(event) {
   const original = event.target.dataset.source;
   const description = event.target.dataset.description;
 
-  instance = basicLightbox.create(
+  const instance = basicLightbox.create(
     `<div class="modal">
         <img class="modal-img"
           src= "${original}"

@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(2, 223, 247);
 }
@@ -12,14 +16,15 @@ img {
 
 .gallery {
   display: flex;
-  width: 1440px;
-  height: 696px;
-  padding: 24px 156px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 24px;
-  background: #ffffff;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 24px;
+  row-gap: 48px;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: 1128px;
 }
 
 .gallery-item {
@@ -28,17 +33,20 @@ img {
 
 .gallery-image {
   width: 360px;
-  height: 200px;
-  flex-shrink: 0;
-  transition: transform 250ms ease-in-out;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 0 #020202;
+  transition: transform 300ms ease-in-out;
 }
 
-.gallery-image:hover {
+.gallery-image:hover,
+.gallery-image:focus {
   transform: scale(1.1);
 }
 
 .modal-img {
   width: 1112px;
   height: 640px;
-  flex-shrink: 0;
+  border-radius: 25px;
 }
