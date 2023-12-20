@@ -64,11 +64,13 @@ const images = [
   },
 ];
 
+let instance;
+
 const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
-refs.gallery.innerHTML = createMarkup(images);
+refs.gallery.innerHTML = createMarcup(images);
 
 refs.gallery.addEventListener('click', onGalleryClick);
 
@@ -77,11 +79,10 @@ function onGalleryClick(event) {
   if (event.target === event.currentTarget) {
     return;
   }
-
   const original = event.target.dataset.source;
   const description = event.target.dataset.description;
 
-  const instance = basicLightbox.create(
+  instance = basicLightbox.create(
     `<div class="modal">
         <img class="modal-img"
           src= "${original}"
@@ -100,7 +101,7 @@ function onGalleryClick(event) {
   instance.show();
 }
 
-function createMarkup(arr) {
+function createMarcup(arr) {
   return arr
     .map(
       ({ preview, original, description }) =>
